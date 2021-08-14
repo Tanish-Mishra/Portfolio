@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: #343f4f;
+}
+.wrapper {
+  display: inline-flex;
+}
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+.wrapper .dynamic-txts {
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+  top: -15px;
+}
+.dynamic-txts li {
+  color: #fc6d6d;
+  list-style: none;
+  font-size: 60px;
+  font-weight: 500;
+  animation-name: slide;
+  animation-timing-function: steps(4);
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0px;
+}
+.dynamic-txts li span {
+  position: relative;
+}
+.dynamic-txts li span:hover {
+  animation-play-state: paused;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  height: 120%;
+  width: 100%;
+  background: #343f4f;
+  border-left: 2px solid #fc6d6d;
+  left: 0;
+  animation-name: typing;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-fill-mode: none;
+  animation-timing-function: steps(12);
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
