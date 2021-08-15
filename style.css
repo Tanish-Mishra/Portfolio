@@ -6,7 +6,7 @@ body {
 #body-header {  
   height:45vh;
   width: 100vw;
-  background-image: url(images/Banner.jpg);
+  background-color: #343f4f;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%; /* first is for the width and second is for the height   */
@@ -91,6 +91,78 @@ body {
   background-clip: text;
    -webkit-text-fill-color: transparent;
   
+}
+.Typing-animation-wrapper{
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+}
+.Typing-animation-wrapper .static-txt{
+  color:#fc6d6d;
+  font-size: 60px;
+  font-weight: 400;
+  position: relative;
+  top:40px;
+  left:30px;
+}
+.Typing-animation-wrapper .dynamic-txts{
+  list-style: none;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+  position: relative;
+  top:0;
+   
+}
+.dynamic-txts li{
+  
+  font-size:60px;
+  font-weight: 500;
+  animation-name: slide;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  animation-timing-function: steps(4);
+  position:relative;
+  top:0;
+  
+
+}
+
+
+.dynamic-txts li span{
+  position:relative;
+  color:#fff;
+  transition: text-shadow 1.5s;
+}
+.dynamic-txts li span:hover{
+  text-shadow:0 0 10px #fc6d6d,
+  0 0 20px #fff;
+  
+}
+.dynamic-txts li span::after{
+content:'';
+position: absolute;
+height: 130%;
+width: 100%;
+background:#343f4f;
+border-left: 2px solid  #fc6d6d;
+left:0;
+animation-name: typing;
+animation-iteration-count:infinite;
+animation-timing-function: steps(10);
+animation-duration: 1.5s;
+animation-fill-mode: none;
+}
+@keyframes typing{
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+@keyframes slide{
+  100%{
+    top:-360px;
+  }
 }
 
 .social-icons li a i {
