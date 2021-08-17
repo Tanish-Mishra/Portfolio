@@ -14,68 +14,76 @@ body {
   padding-top: 1rem;
   background-attachment:scroll;
 }
-.horizontal-list {
-  list-style: none;
-  padding-left: 0px;
-  margin-top: -1rem;
-  
+.ani-container{
+  background-color: #183954;
+  height: 5rem;
+  width: 100%;
+  margin-top: -0.8rem;
 }
 
-
-
-
-.horizontal-list li {
-  display: inline-block;
-  margin: 0px 8px 8px 23px;
-}
-.horizontal-list li a {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-}
-
-
-.nav-menu li a:hover {
-  border-bottom: 2px solid teal;
-  color: yellow;
-}
-
-.nav-menu li a {
-  transition: color 1s, border-bottom 4s;
-}
-.text-centre {
-  text-align: center;
-}
-/* Styled Text for nav bar*/
-
-.styled-text li a { 
-  background-image: linear-gradient(90deg,white,red);
-    -webkit-background-clip: text;
-  background-clip: text;
-  color:transparent; 
-}
-
+       /* Liquid Animation */
+ .liquid{
+   display:inline-flex;
+   position: relative;
    
-/* Name and Social Icons */
-
-#name-social-container {
-  margin-top: 0vh;
-}
-#my-name {
-  padding-bottom: 13px;
-  font-size: 3.9rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 0.5rem;
-  font-family: sans-serif;
-  font-weight: bolder;
-  font-style: normal;
-  opacity: 1;
-  background-image:linear-gradient(90deg,rgb(183, 0, 255),white);
-  -webkit-background-clip: text;
-  background-clip: text;
-   -webkit-text-fill-color: transparent;
+  background-color: #183954;
   
+  
+ 
+   
+ }
+ .liquid h2{
+   position:absolute;
+   font-size: 3rem;
+   margin-top: -1.5rem;
+   margin-left: 2rem;
+ }
+
+
+                               
+ .liquid h2:nth-child(1){
+  color:#fff;
+  text-shadow: -2px 2px 0px #183954,
+  -2px 2px 0px #183954,
+  -4px 4px 0px #183954,
+  -6px 6px 0px #183954,
+  -8px 8px 0px #183954,
+  -18px 18px 20px  rgba(0,0,0,0.5),
+  -18px 18px 50px  rgba(0,0,0,0.5)
+  ;
 }
+.liquid h2:nth-child(2){
+    color:#2196f3;
+    opacity: 0.5;
+    animation-name: water;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+.liquid h2:nth-child(3){
+    color:#2196f3;
+    opacity: 0.5;
+    animation-name: water;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+}
+.liquid h2:nth-child(4){
+    color:#2196f3;
+    animation-name: water;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes water{
+    0%,100%{
+        clip-path: polygon(0% 46%, 16% 45%, 34% 52%, 50% 61%,68% 65%,85% 61%, 100% 53%,100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0 66%,14% 73%,34% 76%, 50% 71%, 64% 62%, 79% 55%, 100% 51%,100% 100%,0% 100%);
+    }
+}
+
 .Typing-animation-wrapper{
   display: flex;
   justify-content: center;
@@ -150,18 +158,6 @@ animation-fill-mode: none;
   }
 }
 
-.social-icons li a i {
-  padding: 4px;
-  font-size: 1.2rem;
-  /* color:pink;  */
-  border-radius: 50%;
-}
-.social-icons li a i:hover {
-  box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
-  color: red;
-  transition: color 2s;
-  /* transition: property duration timing-function delay; */
-}
 /* About section */
 #about {
   position: relative;
