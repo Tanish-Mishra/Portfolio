@@ -1,280 +1,92 @@
+/* I Have to study about the root and variable */
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+*,
+ *::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0px;
-  font-family: sans-serif;
-  font-size: 30px;
-}
-#body-header {  
-  height:45vh;
-  width: 100vw;
-  background-color: #343f4f;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%; /* first is for the width and second is for the height   */
-  opacity: 1;
-  padding-top: 1rem;
-  background-attachment:scroll;
-}
-.horizontal-list {
-  list-style: none;
-  padding-left: 0px;
-  margin-top: -1rem;
-  
-}
-
-.background-nav{
-  animation: background-nav-animation;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  background-attachment: fixed;
-  transition: animation 5s;
-}
-
-@keyframes background-nav-animation{
-  0%{
-    background-image: linear-gradient(90deg,red,blue);
-    transition: background-image 2s ;
-  
-    100%{
-      background-image: linear-gradient(90deg,white,green);
-    }
-  }
-}
-
-.horizontal-list li {
-  display: inline-block;
-  margin: 0px 8px 8px 23px;
-}
-.horizontal-list li a {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-}
-
-
-.nav-menu li a:hover {
-  border-bottom: 2px solid teal;
-  color: yellow;
-}
-
-.nav-menu li a {
-  transition: color 1s, border-bottom 4s;
-}
-.text-centre {
-  text-align: center;
-}
-/* Styled Text for nav bar*/
-
-.styled-text li a { 
-  background-image: linear-gradient(90deg,white,red);
-    -webkit-background-clip: text;
-  background-clip: text;
-  color:transparent; 
-}
-
-   
-/* Name and Social Icons */
-
-#name-social-container {
-  margin-top: 0vh;
-}
-#my-name {
-  padding-bottom: 13px;
-  font-size: 3.9rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 0.5rem;
-  font-family: sans-serif;
-  font-weight: bolder;
-  font-style: normal;
-  opacity: 1;
-  background-image:linear-gradient(90deg,rgb(183, 0, 255),white);
-  -webkit-background-clip: text;
-  background-clip: text;
-   -webkit-text-fill-color: transparent;
-  
-}
-.Typing-animation-wrapper{
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 100%; 
+  /* align-content:center;  This works only when flex-wrap is used and set to wrap*/
+  align-items: center;
+  background: var(--clr-bg);
+  font-family: "Balsamiq Sans", cursive;
+  color: var(--clr-neon);
 }
-.Typing-animation-wrapper .static-txt{
-  color:#fc6d6d;
-  font-size: 60px;
-  font-weight: 400;
+.neon-button {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--clr-neon);
+  font-weight: bolder;
+  display: inline-block;
+  cursor: pointer;
+  border: 0.125em solid var(--clr-neon);
+  padding: 0.25em 1.25em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.125em var(--clr-neon);
+  box-shadow: 0 0 1em 0 var(--clr-neon) inset, 0 0 1em 0 var(--clr-neon);
   position: relative;
-  top:40px;
-  left:30px;
-}
-.Typing-animation-wrapper .dynamic-txts{
-  list-style: none;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
-  position: relative;
-  top:0;
-   
-}
-.dynamic-txts li{
-  
-  font-size:60px;
-  font-weight: 500;
-  animation-name: slide;
-  animation-iteration-count: infinite;
-  animation-duration: 6s;
-  animation-timing-function: steps(4);
-  position:relative;
-  top:0;
-  
-
+   /* transition: background-color 100ms linear;  */
 }
 
-
-.dynamic-txts li span{
-  position:relative;
-  color:#fff;
-  transition: text-shadow 1.5s;
-}
-.dynamic-txts li span:hover{
-  text-shadow:0 0 10px #fc6d6d,
-  0 0 20px #fff;
-  
-}
-.dynamic-txts li span::after{
-content:'';
-position: absolute;
-height: 130%;
-width: 100%;
-background:#343f4f;
-border-left: 2px solid  #fc6d6d;
-left:0;
-animation-name: typing;
-animation-iteration-count:infinite;
-animation-timing-function: steps(10);
-animation-duration: 1.5s;
-animation-fill-mode: none;
-}
-@keyframes typing{
-  100%{
-    left: 100%;
-    margin: 0 -35px 0 35px;
-  }
-}
-@keyframes slide{
-  100%{
-    top:-360px;
-  }
-}
-
-.social-icons li a i {
-  padding: 4px;
-  font-size: 1.2rem;
-  /* color:pink;  */
-  border-radius: 50%;
-}
-.social-icons li a i:hover {
-  box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
-  color: red;
-  transition: color 2s;
-  /* transition: property duration timing-function delay; */
-}
-/* About section */
-#about {
-  position: relative;
-  height: auto;
-  width: 100%;
-}
-#my-image {
-  height: 12rem;
-  width: 12rem;
-  margin: auto;
-  margin-top: -7vh;
-}
-#my-image img {
+.neon-button::before{
+  content: '';
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  /* right: 0;
+  bottom: 0; */
   height: 100%;
   width: 100%;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 1px 1px 10px 2px lightgray; /* inset, 2px 2px 10px 3px #2857a4 ; */
+ transform: perspective(1em) rotateX(40deg) /*translateZ(-1em)*/ scale(1,0.40);
+ filter:blur(1em);
+ opacity: 0.7;
+ pointer-events:none;
+ 
+}
+.neon-button::after{
+
+   content: '';
+    position: absolute;
+    top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;   
+   box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
+   opacity: 0;
+   transition: opacity 100ms linear, background-color 100ms linear;
+    /* background-color: var(--clr-neon);
+   z-index: -1;  */
+    
+}
+ .neon-button:hover::before,
+ .neon-button:focus::before{
+   opacity: 1;
+ }
+.neon-button:hover::after,
+.neon-button:focus::after{    
+  opacity: 1;
+  background-color: var(--clr-neon);
+  z-index: -1; 
 }
 
-#about-para {
-  padding: 10px;
-  width: 70%;
-  text-transform: capitalize;
-  text-align: justify;
-  color: grey;
-  font-size: 18px;
-  line-height: 1.5rem;
-  margin: auto;
-}
-.text-highlight {
-  color: #2857a4;
-  font-weight: 600;
-}
-/* flex */
-section {
-  display: flex;
-  width: 100%;
-  height: 75vh;
-  flex-direction: column;
-  align-items: center;
-}
-section:nth-child(2n) {
-  background-color: grey;
-}
-section:nth-child(2n + 1) {
-  background-color: white;
-}
+.neon-button:hover,
+.neon-button:focus {
+   /* background: var(--clr-neon);  */
+  color:var(--clr-bg);
+  /* border-color: var(--clr-bg); */
+  text-shadow: none;
 
-.section-heading {
-  width: auto;
-  padding: 20px 10px 10px;
-  margin: 10px auto;
-  font-weight: 400;
 }
-.section-heading span {
-  font-size: 40px;
-  color: blue;
-  /* background-clip:text;
-  background-image: linear-gradient(90deg,red,blue); */
-  display: inline-block;
-  padding-top: 10px;
-  margin-right: 0.5rem;
-}
-.skills-display {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.mb75px {
-  margin-bottom: 75px;
-}
-.skill-progress {
-  width: 7rem;
-  height: 1.5rem;
-  background-color: lightgrey;
-  border-radius: 0.8rem;
-  border: 2px solid black;
-}
-.mb-blue {
-  background-color: #2857a4;
-}
-
-.skill-name > span {
-  display: inline-block;
-  color: white;
-  font-size: 1.3rem;
-  margin-left: 20px;
-  margin-top: -30px;
-}
-.skill-progress > div {
-  border-radius: 28px 0px 0px 20px;
-}
-/* Percentage Classes */
-.eighty-five-percent {
-  /* background-color: maroon; */
-  width: 85%;
-  height: inherit;
-  /* border-radius: 0.8rem; */
-}
+ 
