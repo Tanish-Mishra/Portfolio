@@ -1,93 +1,50 @@
-/* I Have to study about the root and variable */
-:root {
-  --clr-neon: hsl(317 100% 54%);
-  --clr-bg: hsl(323 21% 16%);
+*{
+    margin:0;
+    padding:0;
 }
 
-*,
- *::before,
-*::after {
-  box-sizing: border-box;
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFC444;
+    font-family: 'Rubik Mono One', sans-serif;
+    flex-direction: column;
 }
+.word{
+    color:#FFC444;
+    line-height: 1;
+           
+}
+.word span{
+    font-weight: 900;
+    display: inline-block;
+    font-size: 10vw;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    cursor: pointer;
 
-body {
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* align-content:center;  This works only when flex-wrap is used and set to wrap*/
-  align-items: center;
-  background: var(--clr-bg);
-  font-family: "Balsamiq Sans", cursive;
-  color: var(--clr-neon);
 }
-.neon-button {
-  font-size: 2.5rem;
-  text-transform: capitalize;
-  text-decoration: none;
-  color: var(--clr-neon);
-  font-weight: bolder;
-  display: inline-block;
-  cursor: pointer;
-  border: 0.125em solid var(--clr-neon);
-  padding: 0.25em 1.25em;
-  border-radius: 0.25em;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.125em var(--clr-neon);
-  box-shadow: 0 0 1em 0 var(--clr-neon) inset, 0 0 1em 0 var(--clr-neon);
-  position: relative;
-   /* transition: background-color 100ms linear;  */
+@keyframes move{
+    0%{
+       transform: translate(-33%,0);
+    }
+    50%{
+        text-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+    100%{
+        transform: translate(33%,0);
+    }
 }
-
-.neon-button::before{
-  content: '';
-  position: absolute;
-  background: var(--clr-neon);
-  top: 120%;
-  left: 0;
-  /* right: 0;
-  bottom: 0; */
-  height: 100%;
-  width: 100%;
- transform: perspective(1em) rotateX(40deg) /*translateZ(-1em)*/ scale(1,0.40);
- filter:blur(1em);
- opacity: 0.7;
- pointer-events:none;
- 
-}
-.neon-button::after{
-
-   content: '';
-    position: absolute;
-    top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;   
-   box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
-   opacity: 0;
-   transition: opacity 100ms linear, background-color 100ms linear;
-    /* background-color: var(--clr-neon);
-   z-index: -1;  */
-    
-}
- .neon-button:hover::before,
- .neon-button:focus::before{
-   opacity: 1;
+ .word span:nth-child(2){
+animation-delay: 0.5s;
  }
-.neon-button:hover::after,
-.neon-button:focus::after{    
-  opacity: 1;
-  background-color: var(--clr-neon);
-  z-index: -1; 
+ .word span:nth-child(3){
+    animation-delay: 1s;  
 }
-
-.neon-button:hover,
-.neon-button:focus {
-   /* background: var(--clr-neon);  */
-  color:var(--clr-bg);
-  /* border-color: var(--clr-bg); */
-  text-shadow: none;
-
+.word span:nth-child(4){
+     animation-delay: 1.5s;
 }
-
- 
