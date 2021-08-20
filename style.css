@@ -11,6 +11,9 @@ body{
     background: #FFC444;
     font-family: 'Rubik Mono One', sans-serif;
     flex-direction: column;
+} 
+a{
+    text-decoration: none;
 }
 .word{
     color:#FFC444;
