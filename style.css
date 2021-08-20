@@ -12,7 +12,7 @@ body{
     font-family: 'Rubik Mono One', sans-serif;
     flex-direction: column;
 } 
-a{
+a {
     text-decoration: none;
 }
 .word{
